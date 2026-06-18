@@ -102,16 +102,21 @@
   const page2 = document.getElementById("page2");
 
   // moving NO button
-  noBtn.addEventListener("mouseover", () => {
-    const box = document.querySelector(".box");
+  function moveButton() {
+  const box = document.querySelector(".box");
 
-    const maxX = box.clientWidth - 80;
-    const maxY = box.clientHeight - 50;
+  const maxX = box.clientWidth - 100;
+  const maxY = box.clientHeight - 60;
 
-    noBtn.style.left = Math.random() * maxX + "px";
-    noBtn.style.top = Math.random() * maxY + "px";
-  });
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top = Math.random() * maxY + "px";
+}
 
+// laptop (mouse)
+noBtn.addEventListener("mouseover", moveButton);
+
+// phone (touch)
+noBtn.addEventListener("touchstart", moveButton);
   // YES button click
   yesBtn.addEventListener("click", () => {
     alert("Yayyy 💖 I knew you'd say yes!");
